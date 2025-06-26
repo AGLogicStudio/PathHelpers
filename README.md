@@ -25,22 +25,24 @@ Supports .NET 8 and compatible .NET Standard targets.
 
 ### Concatenate Path Segments
 
+
 ```csharp
 using AG.PathHelpers;
 
 // ConcatenateFilePath
+// Works on Windows and Linux without worrying about slashes
+
 string fullPath = FilePaths.ConcatenateFilePath("data", "logs", "output.txt");
 
 // Handling empty or null segments
 var path1 = FilePaths.ConcatenateFilePath(null, "", "final.txt");
 // Result: "final.txt"
 // Nulls and empty strings are safely ignored—no crash, no leading slashes.
-
-
+```
 
 ### CrossPlatformFilePathResolver
-// Works on Windows and Linux without worrying about slashes
 
+```csharp
 var resolver = new CrossPlatformFilePathResolver();
 string absolute = resolver.GetAbsolutePath("reports/monthly.pdf");
 string relative = resolver.GetRelativePath(absolute);
@@ -76,3 +78,4 @@ Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Production");
 var resolver = new CrossPlatformFilePathResolver();
 var webRelative = resolver.GetAbsolutePath("wwwroot/index.html");
 // On a web app, this resolves relative to the app’s content root or wwwroot, depending on how you've configured GetWebRootPath.
+```

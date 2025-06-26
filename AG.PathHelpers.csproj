@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>AG.PathHelpers</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>AG</Authors>
+    <Company>AGLogicStudio</Company>
+    <Description>Cross-platform-safe path resolution and filesystem helpers.</Description>
+    <PackageTags>path;resolver;cross-platform;filesystem;utilities</PackageTags>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RepositoryUrl>https://github.com/AGLogicStudio/PathHelpers</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/AGLogicStudio/PathHelpers</PackageProjectUrl>
+
+  </PropertyGroup>
+
+</Project>

@@ -38,7 +38,7 @@ var path1 = FilePaths.ConcatenateFilePath(null, "", "final.txt");
 
 
 
-// CrossPlatformFilePathResolver
+### CrossPlatformFilePathResolver
 // Works on Windows and Linux without worrying about slashes
 
 var resolver = new CrossPlatformFilePathResolver();

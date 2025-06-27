@@ -1,5 +1,8 @@
 # AG.PathHelpers
 
+[![NuGet](https://img.shields.io/nuget/v/AG.PathHelpers.svg)](https://www.nuget.org/packages/AG.PathHelpers)
+
+
 Cross-platform-safe path utilities for .NET applications  
 Developed and maintained by [AGLogicStudio](https://github.com/AGLogicStudio)
 
@@ -38,6 +41,56 @@ string fullPath = FilePaths.ConcatenateFilePath("data", "logs", "output.txt");
 var path1 = FilePaths.ConcatenateFilePath(null, "", "final.txt");
 // Result: "final.txt"
 // Nulls and empty strings are safely ignored—no crash, no leading slashes.
+
+        ////public static void Main(string[] args)
+        ////{
+        ////    Console.WriteLine("--- Test Cases ---");
+
+        ////    // Case 1: Standard concatenation
+        ////    Console.WriteLine($"Case 1: {ConcatenateFilePath("C:", "folder1", "folder2", "file.txt")}");
+        ////    // Expected: C:\folder1\folder2\file.txt
+
+        ////    // Case 2: Redundant slashes at ends of segments
+        ////    Console.WriteLine($"Case 2: {ConcatenateFilePath("C:\\", "folder1\\", "\\folder2", "file.txt")}");
+        ////    // Expected: C:\folder1\folder2\file.txt
+
+        ////    // Case 3: Empty or null segments
+        ////    Console.WriteLine($"Case 3: {ConcatenateFilePath("C:", "", "folder1", null, "file.txt")}");
+        ////    // Expected: C:\folder1\file.txt
+
+        ////    // Case 4: Absolute path in the middle (Path.Join behavior)
+        ////    Console.WriteLine($"Case 4: {ConcatenateFilePath("C:\\Users", "Documents", "D:\\Data", "report.pdf")}");
+        ////    // Expected: C:\Users\Documents\D:\Data\report.pdf (Path.Join concatenates, doesn't "reset")
+
+        ////    // Case 5: Segments that are just slashes
+        ////    Console.WriteLine($"Case 5: {ConcatenateFilePath("/", "folder", "sub", "file.txt")}");
+        ////    // Expected: /folder/sub/file.txt (on Unix-like) or \folder\sub\file.txt (on Windows if first is not absolute root)
+
+        ////    Console.WriteLine($"Case 6: {ConcatenateFilePath("folder1", "/folder2", "file.txt")}");
+        ////    // Expected: folder1/folder2/file.txt (on Unix-like) or folder1\folder2\file.txt (on Windows)
+
+        ////    Console.WriteLine($"Case 7: {ConcatenateFilePath("C:\\", "\\logs\\", "errors.log")}");
+        ////    // Expected: C:\logs\errors.log
+
+        ////    Console.WriteLine($"Case 8: {ConcatenateFilePath("file.txt")}");
+        ////    // Expected: file.txt
+
+        ////    Console.WriteLine($"Case 9: {ConcatenateFilePath("C:\\", "file.txt")}");
+        ////    // Expected: C:\file.txt
+
+        ////    Console.WriteLine($"Case 10: {ConcatenateFilePath("home", "user", "")}");
+        ////    // Expected: home\user (on Windows) or home/user (on Unix)
+
+        ////    Console.WriteLine($"Case 11: {ConcatenateFilePath("C:", "a", "b", "c")}");
+        ////    // Expected: C:\a\b\c
+
+        ////    Console.WriteLine($"Case 12: {ConcatenateFilePath("a", "b", "c")}");
+        ////    // Expected: a\b\c
+
+        ////    Console.WriteLine($"Case 13: {ConcatenateFilePath("C:\\", "a", "b", "c")}");
+        ////    // Expected: C:\a\b\c
+        ////}
+
 ```
 
 ### CrossPlatformFilePathResolver

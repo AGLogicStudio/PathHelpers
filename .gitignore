@@ -1,5 +1,6 @@
 bin/
 obj/
+*.bat
 *.user
 *.suo
 *.nupkg
